@@ -35,8 +35,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'plugin': path.resolve(__dirname, '../dist/index.js')
-      // 'plugin': path.resolve(__dirname, '../src/index.js')
+      // 'plugin': path.resolve(__dirname, '../dist/index.js')
+      'plugin': path.resolve(__dirname, '../src/index.js')
     }
   },
   devServer: {
