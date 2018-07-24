@@ -1,13 +1,13 @@
 {
-  "name": "vue-dropdown-menu",
+  "name": "vue-list-item-menu",
   "version": "0.5.0",
-  "description": "vue menu dropdown",
+  "description": "vue list item menu",
   "author": "Domatskiy",
   "private": false,
   "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/domatskiy/dropdown-menu.git"
+    "url": "https://github.com/domatskiy/vue-list-item-menu.git"
   },
   "scripts": {
     "build": "webpack --config ./build/webpack.prod.conf.js --progress --hide-modules",
@@ -18,6 +18,7 @@
   },
   "keywords": [
     "vue",
+    "list-item",
     "dropdown",
     "menu",
     ""
