@@ -1,6 +1,6 @@
 ## install
 
-npm i vue-dropdown-menu
+npm i vue-list-item-menu
 
 ## use
 
