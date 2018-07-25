@@ -16,7 +16,7 @@ npm i vue-list-item-menu
 example app
 
 ```js
-import dropdownMenu from 'vue-dropdown-menu'
+import dropdownMenu from 'vue-list-item-menu'
 Vue.use(dropdownMenu)
 ```
 
