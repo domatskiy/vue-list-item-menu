@@ -27,7 +27,6 @@
     mounted: function () {
       this.getFields()
     },
-    updated: function () {},
     methods: {
       openMenu: function ($event) {
         $event.stopPropagation()

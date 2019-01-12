@@ -216,7 +216,6 @@
             mounted: function() {
                 this.getFields();
             },
-            updated: function() {},
             methods: {
                 openMenu: function($event) {
                     $event.stopPropagation(), menuBus.$emit("close-menu"), this.showMenu = !0;
