@@ -209,17 +209,17 @@
             props: {},
             created: function() {
                 var _this2 = this;
-                this.getFields(), menuBus.$on("close-menu", function() {
-                    console.log("on close-menu"), _this2.showMenu = !1;
+                menuBus.$on("close-menu", function() {
+                    _this2.showMenu = !1;
                 });
             },
-            updated: function() {
+            mounted: function() {
                 this.getFields();
             },
+            updated: function() {},
             methods: {
                 openMenu: function($event) {
-                    $event.stopPropagation(), console.log("openMenu"), menuBus.$emit("close-menu"), 
-                    this.showMenu = !0;
+                    $event.stopPropagation(), menuBus.$emit("close-menu"), this.showMenu = !0;
                 },
                 getFields: function() {
                     var _this3 = this;

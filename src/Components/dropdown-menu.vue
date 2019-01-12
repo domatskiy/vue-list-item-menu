@@ -20,19 +20,17 @@
     },
     props: {},
     created: function () {
-      this.getFields()
       menuBus.$on('close-menu', () => {
-        console.log('on close-menu')
         this.showMenu = false
       })
     },
-    updated: function () {
+    mounted: function () {
       this.getFields()
     },
+    updated: function () {},
     methods: {
       openMenu: function ($event) {
         $event.stopPropagation()
-        console.log('openMenu')
         menuBus.$emit('close-menu')
         this.showMenu = true
       },
