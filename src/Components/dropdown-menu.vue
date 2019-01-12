@@ -26,6 +26,9 @@
         this.showMenu = false
       })
     },
+    updated: function () {
+      this.getFields()
+    },
     methods: {
       openMenu: function ($event) {
         $event.stopPropagation()
