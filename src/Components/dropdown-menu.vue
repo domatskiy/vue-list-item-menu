@@ -14,18 +14,26 @@
     name: 'dropdown-menu',
     data: function () {
       return {
+        rendering: false,
         items: [],
         showMenu: false
       }
     },
-    props: {},
+    props: {
+      id: {
+        required: true
+      }
+    },
     created: function () {
+      this.getFields()
       menuBus.$on('close-menu', () => {
         this.showMenu = false
       })
     },
     mounted: function () {
-      this.getFields()
+      this.$watch(function () { return this.$slots.default }, () => {
+        console.log('menu this.$slots.default updated ')
+      })
     },
     methods: {
       openMenu: function ($event) {
@@ -34,14 +42,16 @@
         this.showMenu = true
       },
       getFields: function () {
+        let menuItems = []
         this.$slots.default.forEach(($child) => {
           if (!$child.componentOptions || ($child.componentOptions.tag !== 'dropdown-menu-item' && $child.componentOptions.tag !== 'dropdown-menu-sep')) {
             return
           }
           const props = $child.componentOptions.propsData // $child.componentOptions &&
           props.itemClass = typeof $child.data.staticClass === 'string' ? $child.data.staticClass : ''
-          this.items.push($child)
+          menuItems.push($child)
         })
+        this.items = menuItems
       }
     },
     render (h) {
@@ -70,6 +80,8 @@
         ))
       }
 
+      this.rendering = true
+
       return h(
         'div',
         {
@@ -79,6 +91,11 @@
           }
         }, c
       )
+    },
+    watch: {
+      id: function () {
+        this.getFields()
+      }
     }
   }
 </script>
