@@ -5,7 +5,7 @@ npm i vue-list-item-menu
 ## use
 
 ```html
-<dropdown-menu>
+<dropdown-menu :id="'menu' + id">
     <dropdown-menu-item :default="true" title="Просмотр" class="show" @click="menuShow()"></dropdown-menu-item>
     <dropdown-menu-item title="Редактирование" class="edit" @click="menuEdit()"></dropdown-menu-item>
     <dropdown-menu-sep></dropdown-menu-sep>

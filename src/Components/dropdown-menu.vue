@@ -85,6 +85,7 @@
       return h(
         'div',
         {
+          id: this.id,
           class: 'dropdown-menu',
           on: {
             click: this.openMenu
